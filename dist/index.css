@@ -1,0 +1,654 @@
+/*********
+Variables
+*********/
+/* Color Variables & Maps */
+/* Spacing */
+/* Typography */
+/* Borders */
+/* Shadows */
+/***************
+MIXINS
+***************/
+/* Breakpoint mixins */
+/*****
+Resets 
+******/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: inherit;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+/*********
+Typograhpy
+**********/
+/*************************
+    ACCORDION SECTION
+*************************/
+.accordion {
+  width: 80%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.accordion-button {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding-right: 4rem;
+  padding-bottom: 0.75rem;
+  background: #faf9f8;
+  border: none;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: left;
+  color: #42474c;
+  cursor: pointer;
+}
+.accordion-button .line-commons, .accordion-button .lines::after, .accordion-button .lines {
+  display: inline-block;
+  position: absolute;
+  width: 12px;
+  height: 2px;
+  background: #42474c;
+}
+.accordion-button .lines {
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+}
+.accordion-button .lines::after {
+  content: "";
+  transform: rotate(90deg);
+  transition: transform 0.2s ease-in-out;
+}
+.accordion-content {
+  max-height: 0;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #d2d5d9;
+  overflow: hidden;
+  transition: max-height 0.2s ease-in-out;
+}
+.accordion-content p {
+  margin: 2rem 0;
+  line-height: 2.2rem;
+  color: #6b7177;
+}
+.accordion-content p:first-child {
+  margin-top: 1rem;
+}
+.accordion-content ul {
+  padding-left: 4rem;
+  list-style: disc;
+  color: #6b7177;
+}
+.accordion-content a {
+  text-decoration: underline;
+  color: #008060;
+}
+
+.is-open > .lines::after {
+  transform: rotate(0deg);
+}
+
+.button-primary {
+  display: block;
+  padding: 16px 15px;
+  background-color: #008060;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+.button-primary:hover {
+  background-color: #004c3f;
+}
+
+input.input-default {
+  display: inline-block;
+  padding: 16px 15px;
+  background-color: #ffffff;
+  border: none;
+  border-width: 0;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px rgba(107, 113, 119, 0.15);
+  font-size: 1.6rem;
+  color: #6b7177;
+  outline: none;
+}
+
+.free-trial-header {
+  background: transparent;
+  color: #212326;
+  position: relative;
+  text-align: center;
+}
+.free-trial-header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("./img/background.svg") top center no-repeat;
+  background-size: cover;
+  z-index: -20;
+}
+.free-trial-header .logo {
+  background-color: #008060;
+  margin: 0 auto;
+  padding-top: 1rem;
+}
+.free-trial-header .logo img {
+  width: 120px;
+}
+.free-trial-header .hero-text {
+  padding: 1rem;
+  color: #ffffff;
+}
+.free-trial-header .hero-text h1 {
+  padding-top: 4.8rem;
+  font-size: 6rem;
+  letter-spacing: -0.2rem;
+}
+@media (max-width: 720px) {
+  .free-trial-header .hero-text h1 {
+    font-size: 2.8rem;
+  }
+}
+.free-trial-header .hero-text h2 {
+  padding-top: 1.8rem;
+  font-size: 3rem;
+  font-weight: 400;
+  word-spacing: 0.123rem;
+}
+@media (max-width: 720px) {
+  .free-trial-header .hero-text h2 {
+    font-size: 2.4rem;
+  }
+}
+.free-trial-header .free-trial-email {
+  width: 80%;
+  max-width: 550px;
+  padding: 3rem 2rem 0;
+  margin: 0 auto;
+}
+@media only screen and (max-width: 600px) {
+  .free-trial-header .free-trial-email {
+    min-width: 100%;
+  }
+}
+.free-trial-header .free-trial-email form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.free-trial-header .free-trial-email form input[type=email] {
+  flex-grow: 999;
+  min-width: 250px;
+  max-width: 330px;
+  margin: 0 8px 8px 8px;
+}
+@media only screen and (max-width: 600px) {
+  .free-trial-header .free-trial-email form input[type=email] {
+    min-width: 100%;
+  }
+}
+.free-trial-header .free-trial-email form input[type=email]:focus {
+  border: none;
+  outline: none;
+}
+.free-trial-header .free-trial-email form button {
+  display: block;
+  flex-grow: 1;
+  max-width: 330px;
+  margin: 0 8px 8px 8px;
+  padding: 16px 15px;
+  background-color: #212326;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffffff;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+@media only screen and (max-width: 600px) {
+  .free-trial-header .free-trial-email form button {
+    min-width: 100%;
+  }
+}
+.free-trial-header .free-trial-email form button:hover {
+  background-color: #131416;
+}
+.free-trial-header .free-trial-email__small-text {
+  max-width: 500px;
+  margin: 1.6rem auto 3.2rem;
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+.free-trial-header .hero-img {
+  padding: 4rem 0 1.5rem;
+}
+@media (max-width: 480px) {
+  .free-trial-header .hero-img {
+    width: 80%;
+    margin: -5rem auto 0;
+  }
+}
+
+/*************
+** FEATURES **
+*************/
+#features {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9.6rem 2rem;
+}
+
+.features-container {
+  display: flex;
+  max-width: 980px;
+}
+@media (max-width: 1200px) {
+  .features-container {
+    max-width: 800px;
+  }
+}
+@media (max-width: 960px) {
+  .features-container {
+    max-width: 750px;
+  }
+}
+@media (max-width: 720px) {
+  .features-container {
+    display: block;
+    text-align: center;
+  }
+}
+.features-container > * {
+  flex: 1;
+}
+.features-card {
+  margin-bottom: 4.5rem;
+}
+.features-card__1, .features-card__2 {
+  margin-right: 2rem;
+}
+.features-card__icon {
+  margin-bottom: 2.5rem;
+  color: #008060;
+}
+.features-card__icon i {
+  font-size: 5rem;
+}
+.features-card__content .title {
+  margin-bottom: 1.2rem;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #212326;
+}
+@media (max-width: 960px) {
+  .features-card__content .title {
+    font-size: 1.6rem;
+  }
+}
+@media (max-width: 720px) {
+  .features-card__content .title {
+    font-size: 1.8rem;
+  }
+}
+.features-card__content .text {
+  font-size: 1.6rem;
+  font-weight: lighter;
+  line-height: 2.4rem;
+  color: #6b7177;
+}
+@media (max-width: 720px) {
+  .features-card__content .text {
+    max-width: 350px;
+    margin: 0 auto;
+  }
+}
+
+/*************************
+    CLIENTS SECTION
+*************************/
+#clients {
+  padding: 0 2rem;
+}
+
+.clients {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.clients-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 980px;
+  padding: 4.8rem 2rem;
+  border-top: 1px solid #d2d5d9;
+  border-bottom: 1px solid #d2d5d9;
+}
+@media (max-width: 1200px) {
+  .clients-container {
+    justify-content: center;
+  }
+  .clients-container__logo {
+    padding: 1rem;
+  }
+}
+@media (max-width: 960px) {
+  .clients-container {
+    padding: 3.2rem 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .clients-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .clients-container div {
+    justify-self: center;
+  }
+}
+
+/*************************
+    TESTIMONIAL SECTION
+*************************/
+#testimonial {
+  padding: 9.6rem 2rem;
+}
+
+.testimonial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+.testimonial-container__quote {
+  width: 650px;
+  margin: 0 auto;
+}
+@media (max-width: 960px) {
+  .testimonial-container__quote {
+    width: 600px;
+  }
+}
+@media (max-width: 720px) {
+  .testimonial-container__quote {
+    width: 100%;
+  }
+}
+.testimonial-container__quote p {
+  font-size: 2.4rem;
+  font-weight: normal;
+  line-height: 3.2rem;
+  color: #212326;
+}
+@media (max-width: 960px) {
+  .testimonial-container__quote p {
+    font-size: 2rem;
+    font-weight: lighter;
+  }
+}
+.testimonial-container__quote cite {
+  display: block;
+  margin: 2rem 0 0;
+  font-size: 1.4rem;
+  font-weight: bold;
+  font-style: normal;
+  text-transform: uppercase;
+  color: #42474c;
+}
+.testimonial-container form {
+  margin-top: 4rem;
+}
+.testimonial-container form button {
+  display: block;
+  min-width: 150px;
+  margin: 0 auto;
+  padding: 16px 15px;
+  background-color: #008060;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #ffffff;
+  transition: background-color 0.2s ease-in-out;
+  cursor: pointer;
+}
+.testimonial-container form button:hover {
+  background-color: #004c3f;
+}
+
+/*************************
+    FAQs COMPONENT
+*************************/
+#FAQ {
+  padding: 5.6rem 2rem 9.6rem;
+  background-color: #faf9f8;
+}
+
+.FAQ-title {
+  margin: 4rem 0;
+  font-size: 3rem;
+  font-weight: lighter;
+  text-align: center;
+  color: #004c3f;
+}
+
+/*************************
+    FOOTER SECTION
+*************************/
+#footer {
+  padding: 2rem 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.footer-container ul {
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+@media (max-width: 720px) {
+  .footer-container ul {
+    justify-content: space-between;
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 480px) {
+  .footer-container ul {
+    width: 75%;
+  }
+}
+.footer-container ul a {
+  color: #008060;
+}
+
+/*************************
+    SIGN UP SECTION
+*************************/
+body {
+  position: relative;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.js-open-sign-up {
+  height: 100% !important;
+  width: 100% !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.sign-up {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: #212326;
+  color: #ffffff;
+  z-index: 1000;
+  overflow: hidden;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s ease-in-out;
+  visibility: hidden;
+}
+.sign-up .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  top: 10%;
+  max-width: 500px;
+  height: 100%;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.sign-up .close-icon {
+  position: absolute;
+  top: -5rem;
+  right: 2rem;
+  font-size: 2.5rem;
+  color: #6b7177;
+  transition: color 0.2s ease-in-out;
+  cursor: pointer;
+  z-index: 1002;
+}
+.sign-up .close-icon:hover {
+  color: #ffffff;
+}
+.sign-up .heading {
+  max-width: 500px;
+  margin: 2rem 0 1rem;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 4rem;
+}
+@media (max-width: 480px) {
+  .sign-up .heading {
+    text-align: center;
+  }
+}
+.sign-up form input {
+  width: 100%;
+  margin: 1rem 0;
+}
+.sign-up form input:focus {
+  box-shadow: 0 0 0 2px #008060;
+}
+.sign-up form input[type=email]:not(:focus):not(:placeholder-shown):invalid {
+  box-shadow: 0 0 0 2px #c43256;
+}
+.sign-up form input[type=email]:not(:focus):not(:placeholder-shown):invalid ~ .error {
+  height: 40px;
+  padding: 10px;
+  opacity: 1;
+}
+.sign-up form p.learn-more {
+  margin: 2rem 0;
+  line-height: 2.2rem;
+}
+.sign-up form p.learn-more a {
+  color: #69cf9c;
+}
+.sign-up form .error-mssg {
+  background-color: #c43256;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  box-shadow: 0 0 0 2px #c43256;
+  font-size: 1.4rem;
+}
+.sign-up form .email-error-message,
+.sign-up form .password-error-message,
+.sign-up form .store-error-message {
+  height: 0;
+  margin-top: -10px;
+  transition: all 0.2s linear;
+  overflow: hidden;
+  opacity: 0;
+  outline: none;
+  box-shadow: none;
+}
+.sign-up form .error-shadow {
+  box-shadow: 0 0 0 2px #c43256;
+}
+.sign-up form .error-shadow:focus {
+  box-shadow: 0 0 0 2px #c43256;
+}
+.sign-up form .button {
+  margin-left: auto;
+  padding: 15px 25px;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.container-1600 {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.padding-top {
+  padding-top: 3rem;
+}
