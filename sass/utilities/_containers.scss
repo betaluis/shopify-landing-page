@@ -1,0 +1,14 @@
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 $base-padding;
+    box-sizing: border-box;
+}
+
+.container-1600 {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 $base-padding;
+    box-sizing: border-box;
+}

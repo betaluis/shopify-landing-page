@@ -1,0 +1,38 @@
+/*************************
+    FOOTER SECTION
+*************************/
+
+#footer {
+    padding: 2rem 0;
+}
+
+.footer {
+
+    &-container {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        max-width: 980px;
+        margin: 0 auto;
+
+        ul { 
+            width: 300px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            @include md { 
+                justify-content: space-between;
+                width: 50%;
+                margin: 0 auto;
+            }
+            @include sm {
+                width: 75%;
+            }
+
+            a {
+                color: $primary;
+            }
+        }
+    }
+}

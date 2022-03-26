@@ -1,0 +1,35 @@
+/***************
+MIXINS
+***************/
+
+/* Breakpoint mixins */
+@mixin xs {
+    @media (max-width: map-get($breakpoints, "xs")) {
+        @content;
+    }
+}
+@mixin sm {
+    @media (max-width: map-get($breakpoints, "sm")) {
+        @content;
+    }
+}
+@mixin md {
+    @media (max-width: map-get($breakpoints, "md")) {
+        @content;
+    }
+}
+@mixin lg {
+    @media (max-width: map-get($breakpoints, "lg")) {
+        @content;
+    }
+}
+@mixin xl {
+    @media (max-width: map-get($breakpoints, "xl")) {
+        @content;
+    }
+}
+@mixin xxl {
+    @media (max-width: map-get($breakpoints, "xxl")) {
+        @content;
+    }
+}

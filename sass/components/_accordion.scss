@@ -1,0 +1,86 @@
+/*************************
+    ACCORDION SECTION
+*************************/
+
+
+.accordion {
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+
+    &-button {
+        position: relative;
+        width: 100%;
+        margin-bottom: $base-margin;
+        padding-right: $padding-xl;
+        padding-bottom: $padding-sm;
+
+        background: $light-gray;
+        border: none;
+
+        font-size: 1.8rem;
+        font-weight: 600;
+        text-align: left;
+        color: $dark-gray;
+
+        cursor: pointer;
+
+        .line-commons {
+            display: inline-block;
+            position: absolute;
+
+            width: 12px;
+            height: 2px;
+            background: $dark-gray;
+        }
+
+        .lines {
+            @extend .line-commons;
+            
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+
+            &::after {
+                @extend .line-commons;
+                content: '';
+
+                transform: rotate(90deg);
+                transition: transform 0.2s ease-in-out;
+            }
+        }
+    }
+
+    &-content {
+        max-height: 0;
+        margin-bottom: $margin-lg;
+
+        border-bottom: $base-border;
+
+        overflow: hidden;
+        transition: max-height 0.2s ease-in-out;
+
+        p {
+            margin: 2rem 0;
+            line-height: 2.2rem;
+            color: $gray; 
+
+            &:first-child { margin-top: 1rem; }
+        }
+        ul {
+            padding-left: 4rem;
+            list-style: disc;
+            color: $gray;
+        }
+        a {
+            text-decoration: underline;
+            color: $primary;
+        }
+    }
+}
+
+.is-open {
+    & > .lines::after {
+        transform: rotate(0deg);
+    }
+}

@@ -1,0 +1,49 @@
+/*************************
+    CLIENTS SECTION
+*************************/
+
+#clients {
+    padding: 0 2rem;
+}
+
+.clients {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 980px;
+        padding: 4.8rem 2rem;
+
+        border-top: 1px solid #d2d5d9;
+        border-bottom: 1px solid #d2d5d9;
+
+        @include xl {
+            justify-content: center;
+            &__logo {
+                padding: 1rem;
+            }
+        }
+
+        @include lg {
+            padding: 3.2rem 2rem;
+        }
+
+        @include sm {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+
+            div {
+                justify-self: center;
+            }
+        }
+    }
+}
